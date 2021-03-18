@@ -8,8 +8,8 @@ function passwordchoice () {
     if (isNaN(plength)===true){
         alert("Please provide the password length as a number")
         return
-    } if (plength < 8 || plength > 128) {
-        alert("Password needs to be greater than 8 characters and less than 128 characters")
+    } if(plength<8) {
+        alert("password must be at least 8 characters")
         return
     }
     var wantlower = confirm ("click okay if you want lowercase in your password")
@@ -37,15 +37,15 @@ function randomselect (array) {
 
 
 function generatePassword () {
-    var choice = passwordchoice ()
+    var choice = passwordchoice()
     var result = []
     var possible = []
     var qurantee = []
-    if (choice.wantlower){
-        possible = possible.concat (lowercase)
-        qurantee.push (randomselect(lowercase))
+    // if (choice.wantlower){
+    //     possible = possible.concat (lowercase)
+    //     qurantee.push (randomselect(lowercase))
 
-    }
+    // }
     if (choice.wantupper){
         possible = possible.concat (uppercase)
         qurantee.push (randomselect(uppercase))
