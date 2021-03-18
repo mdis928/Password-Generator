@@ -4,27 +4,28 @@ var numbers = ["0","1","2","3","4","5","6","7","8","9"]
 var special = ["!","@","#","$","%","^","&","*","(",")",]
 
 function passwordchoice () {
-    var plength = parseInt (prompt("How many characters do you want?")) 
-    if (isNaN(plength)===true){
+    var length = parseInt (prompt("How many characters do you want?")) 
+    if (isNaN(length)===true){
         alert("Please provide the password length as a number")
         return
-    } if(plength<8) {
+    } if(length<8) {
         alert("password must be at least 8 characters")
         return
     }
-    var wantlower = confirm ("click okay if you want lowercase in your password")
-    var wantupper = confirm ("click okay if you want uppercase")
-    var wantnumbers = confirm ("click okay if you want numbers")
-    var wantspecial = confirm ("click okay if you want special")
-    if (wantlower === false && wantupper === false && wantnumbers === false && wantspecial === false) {
+    var wantLower = confirm ("click okay if you want lowercase in your password")
+    var wantUpper = confirm ("click okay if you want uppercase")
+    var wantNumbers = confirm ("click okay if you want numbers")
+    var wantSpecial = confirm ("click okay if you want special")
+    if (wantLower === false && wantUpper === false && wantNumbers === false && wantSpecial === false) {
         alert ("Please select password type so that password can be generated")
+        return
     }
     var passwordops = {
-        plength:plength,
-        wantlower:wantlower,
-        wantupper:wantupper,
-        wantnumbers:wantnumbers,
-        wantspecial:wantspecial,
+        length:length,
+        wantLower:wantLower,
+        wantUpper:wantUpper,
+        wantNumbers:wantNumbers,
+        wantSpecial:wantSpecial,
     }
     return passwordops
 }
@@ -41,22 +42,22 @@ function generatePassword () {
     var result = []
     var possible = []
     var qurantee = []
-    // if (choice.wantlower){
-    //     possible = possible.concat (lowercase)
-    //     qurantee.push (randomselect(lowercase))
+    if (choice.wantLower){
+        possible = possible.concat (lowercase)
+        qurantee.push (randomselect(lowercase))
 
-    // }
-    if (choice.wantupper){
+    }
+    if (choice.wantUpper){
         possible = possible.concat (uppercase)
         qurantee.push (randomselect(uppercase))
 
     }
-    if (choice.wantnumbers){
+    if (choice.wantNumbers){
         possible = possible.concat (numbers)
         qurantee.push (randomselect(numbers))
 
     }
-    if (choice.wantspecial){
+    if (choice.wantSpecial){
         possible = possible.concat (special)
         qurantee.push (randomselect(special))
 
