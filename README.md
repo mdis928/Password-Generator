@@ -15,3 +15,9 @@ On line 33, we include another function that includes a for loop. This function 
 Lines 40 - 72 is the code on generating the password itself and randomly selecting characters from the variables from lines 1-4.
 
 Below is the code that was given to us. We have query selector and event listeners which is the final touch of executing the behavior of the webpage.
+
+https://github.com/mdis928/Password-Generator
+
+https://mdis928.github.io/Password-Generator/
+
+![Password Generator](https://user-images.githubusercontent.com/79114439/111881883-07d73000-8989-11eb-9555-aa6db059d3cc.png)
