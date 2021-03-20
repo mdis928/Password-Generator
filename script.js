@@ -11,6 +11,9 @@ function passwordchoice () {
     } if(length<8) {
         alert("password must be at least 8 characters")
         return
+    } if(length>128) {
+        alert("password must be at less than 128 characters")
+        return
     }
     var wantLower = confirm ("click okay if you want lowercase in your password")
     var wantUpper = confirm ("click okay if you want uppercase")
